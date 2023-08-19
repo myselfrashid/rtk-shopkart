@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '../Features/productReducer';
 
-export const Products = () => {
+export const ProductCard = () => {
     const products = useSelector(state => state.products);
     const dispatch = useDispatch();
 
@@ -10,6 +10,8 @@ export const Products = () => {
         dispatch(fetchProducts())
     }, [])
     return (
-        <div>Products</div>
+        <div>
+            
+        </div>
     )
 }
