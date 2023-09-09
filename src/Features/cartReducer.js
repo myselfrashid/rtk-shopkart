@@ -33,7 +33,7 @@ const cartReducer = createSlice({
           position: "bottom-center",
         });
       }
-      /* localStorage.setItem("cartItems", JSON.stringify(state.cartItems)); */
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     decreaseFromCart(state, action) {
       const itemIndex = state.cartItems.findIndex(
@@ -57,7 +57,7 @@ const cartReducer = createSlice({
         });
         state.cartItems = newCartItems;
       }
-      /* localStorage.setItem("cartItems", JSON.stringify("state.cartItems")); */
+      localStorage.setItem("cartItems", JSON.stringify("state.cartItems"));
     },
     removeFromCart(state, action) {
       state.cartItems.map((cartItem) => {
@@ -72,7 +72,7 @@ const cartReducer = createSlice({
           });
           state.cartItems = newCartItems;
         }
-        /* localStorage.setItem("cartItems", JSON.stringify("state.cartItems")); */
+        localStorage.setItem("cartItems", JSON.stringify("state.cartItems"));
         return state;
       });
     },
@@ -84,6 +84,7 @@ const cartReducer = createSlice({
 
           cartTotal.total += itemTotal;
           cartTotal.quantity += cartQuantity;
+          return cartTotal;
         },
         {
           total: 0,
@@ -103,6 +104,6 @@ const cartReducer = createSlice({
   },
 });
 
-export const { addToCart, decreaseFromCart, removeFromCart, cartTotal, clearCart } =
+export const { addToCart, decreaseFromCart, removeFromCart, getTotals, clearCart } =
   cartReducer.actions;
 export default cartReducer.reducer;

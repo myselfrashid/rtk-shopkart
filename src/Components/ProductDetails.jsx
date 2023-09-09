@@ -24,16 +24,16 @@ const ProductDetails = () => {
         getProduct();
     }, [])
     return (
-        <div className='w-full h-[80vh] bg-yellow-500 flex justify-center p-8'>
+        <div className='w-full lg:h-[80vh] md:h-[75vh] bg-yellow-500 flex justify-center p-8'>
             <SkeletonTheme baseColor="#202020" highlightColor="#444">
-                <div className='flex flex-row w-[70%] gap-10 text-yellow-500 bg-gray-900 shadow-2xl rounded-lg'>
-                    <div className='flex items-center bg-white w-[35%] p-8 rounded-lg bg-contain justify-center'>
-                        <img className='bg-contain h-[75%]' src={product.image} alt={product.id}></img>
+                <div className='flex md:flex-row xs:flex-col lg:w-[70%] md:w-[90%] lg:gap-10 md:gap-5 lg:h-full md:h-[70%] text-yellow-500 bg-gray-900 shadow-2xl rounded-lg'>
+                    <div className='flex items-center bg-white md:w-[35%] xs:w-full p-8 rounded-lg bg-contain justify-center'>
+                        <img className='bg-contain lg:h-[75%] md:h-[60%]' src={product.image} alt={product.id}></img>
                     </div>
-                    <div className='w-[60%] p-4 flex flex-col gap-4'>
-                        <h1 className='text-2xl font-bold'>{product.title || <Skeleton />}</h1>
-                        <p>{product.description || <Skeleton count={3} />}</p>
-                        <h2 className='text-xl'>${product.price || <Skeleton />}</h2>
+                    <div className='md:w-[60%] xs:w-full p-4 flex flex-col lg:gap-4 md:gap-2'>
+                        <h1 className='lg:text-2xl md:text-xl xs:text-lg md:text-left xs:text-center font-bold'>{product.title || <Skeleton />}</h1>
+                        <p className='lg:text-base md:text-sm xs:text-xs'>{product.description || <Skeleton count={3} />}</p>
+                        <h2 className='text-xl xs:text-lg'>${product.price || <Skeleton />}</h2>
                         <div className='flex gap-4'>
                             <SkeletonTheme baseColor="#202020" highlightColor="#444">
                                 <Link to="/cart">

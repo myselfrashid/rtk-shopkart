@@ -14,7 +14,7 @@ export const Products = () => {
     }, [])
 
     return (
-        <div className='grid grid-cols-4 w-full place-items-center my-8 p-10'>
+        <div className='md:grid lg:grid-cols-4 sm:grid-cols-3 gap-4 sm:flex flex-col w-full place-items-center my-8 p-10'>
             {
                 status ?
                     <div className='w-full absolute top-0'><Spinner /></div> :

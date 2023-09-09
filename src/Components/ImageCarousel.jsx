@@ -52,11 +52,11 @@ const ImageCarousel = () => {
     }
     
     return (
-        <div className='max-w-full h-80 relative flex flex-col m-auto group'>
+        <div className='max-w-full lg:h-80 md:h-60 xs:h-40 relative flex flex-col m-auto group'>
             <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full bg-center bg-cover duration-300'></div>
 
-            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 items-center cursor-pointer pl-4'><BsFillArrowLeftCircleFill onClick={prevSlide} className='text-white active:text-black transition-all' /></div>
-            <div className='hidden group-hover:block absolute z-10 top-[50%] -translate-x-0 translate-y-[-50%] right-5 items-center cursor-pointer pr-4'><BsFillArrowRightCircleFill onClick={nextSlide} className='text-white active:text-black transition-all' /></div>
+            <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 items-center cursor-pointer md:pl-4 sm:pl-2'><BsFillArrowLeftCircleFill onClick={prevSlide} className='text-white active:text-black transition-all' /></div>
+            <div className='hidden group-hover:block absolute z-10 top-[50%] -translate-x-0 translate-y-[-50%] right-5 items-center cursor-pointer md:pr-4 sm:pr-2'><BsFillArrowRightCircleFill onClick={nextSlide} className='text-white active:text-black transition-all' /></div>
             <div className='flex justify-center absolute bottom-0 items-center w-full pb-4'>
                 {slides.map((slide, slideIndex) => {
                     return (
