@@ -14,10 +14,10 @@ export const Products = () => {
     }, [])
 
     return (
-        <div className='md:grid lg:grid-cols-4 sm:grid-cols-3 gap-4 sm:flex flex-col w-full place-items-center my-8 p-10'>
+        <div className='md:grid lg:grid-cols-4 sm:grid-cols-3 gap-4 xs:flex flex-col w-full justify-center items-center my-8 p-10'>
             {
                 status ?
-                    <div className='w-full absolute top-0'><Spinner /></div> :
+                    <div className='w-full absolute top-0 left-0'><Spinner /></div> :
                     products.map((product) => (
                         <div key={product.id} className=''>
                             <ProductCard image={product.image} title={product.title} price={product.price} product={product} />

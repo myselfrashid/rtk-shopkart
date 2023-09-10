@@ -6,7 +6,6 @@ import About from './Components/About';
 import Cart from './Components/Cart';
 import { Toaster } from 'react-hot-toast';
 import { SkeletonTheme } from 'react-loading-skeleton';
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import ProductDetails from './Components/ProductDetails';
 
