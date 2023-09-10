@@ -14,7 +14,7 @@ export const Products = () => {
     }, [])
 
     return (
-        <div className='md:grid lg:grid-cols-4 sm:grid-cols-3 gap-4 xs:flex flex-col w-full justify-center items-center my-8 p-10'>
+        <div className='md:grid lg:grid-cols-4 sm:grid-cols-3 gap-4 xs:flex flex-col w-full justify-center items-center place-items-center my-8 p-10'>
             {
                 status ?
                     <div className='w-full absolute top-0 left-0'><Spinner /></div> :
