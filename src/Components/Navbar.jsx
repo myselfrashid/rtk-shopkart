@@ -7,6 +7,7 @@ import { AiOutlineClose } from "react-icons/ai"
 
 const Navbar = () => {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
+    const genericHamburgerLine = `h-1 w-6 my-[2px] rounded-full bg-yellow-500 transition ease transform duration-300`;
 
     const handleNavbar = () => {
         setIsNavExpanded(!isNavExpanded)
@@ -30,8 +31,22 @@ const Navbar = () => {
                     <Link to="/cart"><li className='px-8 py-4 rounded-sm hover:bg-yellow-500 hover:text-black transition-colors cursor-pointer font-semibold'>CART: {cartQuantity}</li></Link>
                 </ul>
             </div>
-            <div className={`md:hidden xs:flex flex-col text-white`} >
-                <button className='transition-all delay-100 w-8 h-8 flex items-center' onClick={handleNavbar}>{!isNavExpanded ? <BiMenuAltRight className='w-8 h-8 text-yellow-500' /> : <AiOutlineClose className='w-8 h-8 text-yellow-500' />}
+            <div className={`md:hidden xs:flex flex-col text-white items-center justify-center bg-black rounded-md`} >
+                <button className="flex flex-col h-10 w-10 rounded justify-center items-center group" onClick={handleNavbar}>
+                    <div
+                        className={`${genericHamburgerLine} ${isNavExpanded
+                                ? "rotate-45 translate-y-2 opacity-50 group-hover:opacity-100"
+                                : "opacity-50 group-hover:opacity-100"
+                            }`}
+                    />
+
+                    <div className={`${genericHamburgerLine} ${isNavExpanded ? "opacity-0" : "opacity-50 group-hover:opacity-100"}`} />
+                    <div
+                        className={`${genericHamburgerLine} ${isNavExpanded
+                                ? "-rotate-45 -translate-y-2 opacity-50 group-hover:opacity-100"
+                                : "opacity-50 group-hover:opacity-100"
+                            }`}
+                    />
                 </button>
                 {isNavExpanded ?
                     <ul className='md:hidden flex-col gap-8 items-center pt-10 text-yellow-500 xs:flex absolute top-20 z-10 w-full right-0 bg-slate-900 h-screen'>

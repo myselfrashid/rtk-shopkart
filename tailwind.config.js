@@ -6,7 +6,7 @@ export default {
       screens: {
         xs: "320px",
         // => @media (min-width: 320px) { ... }
-        
+
         sm: "640px",
         // => @media (min-width: 640px) { ... }
 
@@ -22,7 +22,16 @@ export default {
         "2xl": "1536px",
         // => @media (min-width: 1536px) { ... }
       },
+      animation: {
+        translateText: 'translateText 1.5s ease-in'
+      },
+      keyframes: {
+        translateText: {
+          "0%": { transform: "translate(-100%)" },
+          "100%": { transform: "translate(0%)" },
+        },
+      },
     },
   },
-  plugins: ['prettier-plugin-tailwindcss'],
+  plugins: ["prettier-plugin-tailwindcss"],
 };
