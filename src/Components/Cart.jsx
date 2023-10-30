@@ -40,6 +40,7 @@ const Cart = () => {
         <div className='md:w-2/3 xs:w-full min-h-screen max-h-full flex flex-col py-8 md:px-4 xs:px-2 items-center md:gap-4 xs:gap-2'>
           {
             cart.cartItems.map((product) => {
+              const price = Math.floor(product.price);
               return (
                 <div key={product.id} className='lg:w-[80%] md:w-full xs:w-full flex md:h-48 xs:h-40 items-center justify-center md:m-4 xs:m-2'>
                   <div className='w-full h-full flex flex-row md:gap-3 xs:gap-0 items-center rounded-lg bg-slate-900'>
@@ -49,14 +50,14 @@ const Cart = () => {
                     <div className='w-full text-yellow-500 md:m-4 xs:m-2'>
                       <div className='flex flex-col lg:gap-2 xs:gap-1'>
                         <h2 className='md:font-bold xs:font-semibold md:text-base xs:text-sm'>{`${(product.title).slice(0, 40)}...`}</h2>
-                        <h2 className='font-semibold'>${Math.floor(product.price)}</h2>
+                        <h2 className='font-semibold'>${price}</h2>
                         <div className='flex flex-row items-center font-semibold justify-between md:w-20 md:h-8 xs:w-16 xs:h-6'>
                           <button onClick={() => handleIncrease(product)} className='bg-yellow-600 md:w-6 xs:w-5 h-full text-black rounded-s-sm hover:text-white hover:bg-yellow-500 transition-all'>+</button>
                           <p className='xs:text-sm md:text-base'>{product.cartQuantity}</p>
                           <button onClick={() => handleDecrease(product)} className='bg-yellow-600 md:w-6 xs:w-5 h-full text-black rounded-e-sm hover:text-white hover:bg-yellow-500 transition-all'>-</button>
                         </div>
                         <div onClick={() => handleRemove(product)} className='group md:w-20 md:h-8 xs:w-16 xs:h-6 bg-yellow-600 flex items-center justify-center rounded-sm hover:bg-red-800 transition-all cursor-pointer'><RiDeleteBin4Line className='text-black group-hover:text-yellow-600' /></div>
-                        <p className='md:text-base xs:text-sm'>Total: ${Math.floor(product.price * product.cartQuantity)}</p>
+                        <p className='md:text-base xs:text-sm'>Total: ${price * product.cartQuantity}</p>
                       </div>
                     </div>
                   </div>
